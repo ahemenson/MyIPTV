@@ -29,6 +29,10 @@ public class Canal {
 
     private String tipo;
 
+    public String toString(){
+        return this.getNome() + "\n" + this.getTipo();
+    }
+
 
 
 

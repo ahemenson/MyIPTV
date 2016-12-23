@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         canal1.setNome("Sbt");
         canal1.setTipo("aberta");
         repoCanais.addCanal(canal1);
-
+        atualizarLista();
 
     }
 
@@ -43,7 +43,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void atualizarLista(){
 
         addCanais = repoCanais.getCanais();
-        listCanais.setAdapter((ListAdapter) addCanais);
+        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, addCanais);
+        listCanais.setAdapter(adapter);
         listCanais.setOnItemClickListener(this);
     }
 }
